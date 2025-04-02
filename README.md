@@ -1,111 +1,91 @@
 <div align="center">
 
-# Mobile App Landing Page 🚀
+# Mobile App Landing Page
 
-[![Astro](https://img.shields.io/badge/Astro-5.3.0-FF5D01.svg?style=flat-square&logo=astro)](https://astro.build)
-[![React](https://img.shields.io/badge/React-19.0.0-61DAFB.svg?style=flat-square&logo=react)](https://reactjs.org)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0.7-38B2AC.svg?style=flat-square&logo=tailwind-css)](https://tailwindcss.com)
-[![License](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
+This is a clean, customizable landing page template for mobile apps built with Astro and React. Display your app's key features, screenshots, and download links in an elegant, responsive design.
 
-> Modern, responsive landing page template for mobile applications 📱
-
-### 🌟 [Demo](https://landing.bohd4n.dev)
+<div>
+  <a href="https://landing.bohd4n.dev" style="
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: 500;
+    color: white;
+    background: #4285F4;
+    text-decoration: none;
+    border-radius: 6px;
+    margin: 20px 0;
+  ">Live Demo</a>
+</div>
 
 </div>
 
-## ✨ Features
+## Features
 
-- 🎨 Modern and clean design
-- 📱 Fully responsive
-- 🚀 Built with Astro and React
-- 🎯 SEO-friendly
-- 📝 Markdown support for Privacy & Terms
-- 🖼️ Interactive screenshot gallery with device switching (iPhone/iPad)
-- 🔧 Easy to customize
-- 📦 Zero configuration deployment
+- 📱 **Responsive Design** - Optimized for all devices and screen sizes
+- 🖼️ **Device Preview** - Toggle between iPhone and iPad screenshots
+- 🎨 **Modern UI** - Clean aesthetics with smooth animations
+- 📝 **Markdown Legal Pages** - Easy editing of Privacy Policy and Terms of Service
+- 🔍 **SEO Optimized** - Meta tags and proper structure for better visibility
+- ⚡ **Performant** - Fast loading, built with modern web technologies
 
-## 🚀 Quick Start
+## Quick Start
 
-1. **Clone this repository:**
-   ```bash
-   git clone https://github.com/bohd4nx/mobile-landing-page.git
-   ```
+```bash
+# Clone repository
+git clone https://github.com/bohd4nx/mobile-landing.git
 
-2. **Install dependencies:**
-   ```bash
-   cd mobile-landing-page
-   npm install
-   ```
+# Install dependencies
+npm install
 
-3. **Start development server:**
-   ```bash
-   npm run dev
-   ```
+# Start development server
+npm run dev
 
-## 🛠️ Customization
+# Build for production
+npm run build
+```
 
-### 📝 Content
+## Customization
 
-1. **Main Configuration** (`src/data/appData.ts`):
-   ```typescript
-   // Update app information
-   title: "Your App Name"
-   description: "Your app description"
-   screenshots: {
-     iphone: [
-       "/assets/screenshots/iphone/1.png",
-       // Add more iPhone screenshots
-     ],
-     ipad: [
-       "/assets/screenshots/ipad/1.png",
-       // Add more iPad screenshots
-     ]
-   }
-   features: [] // Add your features
-   faqs: [] // Add your FAQs
-   storeLinks: {
-     apple: "your-app-store-link",
-     google: "your-play-store-link"
-   }
-   socialLinks: [
-     {
-       url: "https://instagram.com/your-account",
-       icon: RiInstagramFill,
-       label: "Instagram"
-     },
-     // Add more social links
-   ]
-   ```
+### App Data
 
-2. **Legal Pages** (`src/content/`):
-   - `privacy.md` - Privacy Policy
-   - `terms.md` - Terms of Service
+Edit `src/data/appData.ts` to customize your app information:
+```typescript
+export const appData = {
+  title: "Your App Name",
+  description: "Your app description",
+  features: [...],
+  screenshots: {...},
+  // more configuration options
+}
+```
 
-3. **Images & Assets** (`public/assets/`):
-   - `logo.png` - Your app icon (160x160px recommended)
-   - `screenshots/iphone/` - iPhone screenshots (9:16 ratio recommended)
-   - `screenshots/ipad/` - iPad screenshots (4:3 ratio recommended)
+### Content
 
-2. **Layout & Components**:
-   - Main layout: `src/layouts/Layout.astro`
-   - Components: `src/components/`
-   - Pages: `src/pages/`
+- **Legal Pages:** Edit markdown files in `src/pages/content/`
+- **Screenshots:** Place device images in `public/screenshots/{iphone|ipad}/`
+- **Styling:** Modify Tailwind classes or edit theme in `tailwind.config.cjs`
 
+### Project Structure
 
-## 📝 License
+```
+src/
+├── components/    # UI components
+├── data/          # App configuration
+├── layouts/       # Page layouts
+├── pages/         # Routes and pages
+└── types/         # TypeScript definitions
+```
 
-This project is MIT licensed. See LICENSE for more information.
+## License
 
-## 🌟 Support
-
-If you find this project useful:
-
-- Give it a star ⭐
-- Share with others 🔄
-- Consider contributing 🛠️
+MIT Licensed. See LICENSE file for details.
 
 ---
 
 <div align="center">
-    <h4>Built with ❤️ by <a href="https://t.me/bohd4nx" target="_blank">Bohdan</a></h4>
+  <p>
+    <a href="https://github.com/bohd4nx/mobile-landing/stargazers">Star this project</a> •
+    <a href="https://github.com/bohd4nx/mobile-landing/issues">Report issue</a>
+  </p>
+  <p>Made with ❤️ by <a href="https://t.me/bohd4nx">Bohdan</a></p>
 </div>
