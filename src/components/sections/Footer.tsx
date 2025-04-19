@@ -1,5 +1,6 @@
+import { siteConfig } from "config";
 import type React from "react";
-import { appData } from "../../data/appData";
+import { memo } from "react";
 
 const Footer: React.FC = () => {
 	return (
@@ -16,7 +17,7 @@ const Footer: React.FC = () => {
 			<div className="text-sm text-gray-500">
 				<p>
 					&copy; {new Date().getFullYear()}{" "}
-					<span className="text-gray-400">{appData.title}</span>
+					<span className="text-gray-400">{siteConfig.title}</span>
 					<br />
 					All rights reserved.
 				</p>
@@ -25,4 +26,4 @@ const Footer: React.FC = () => {
 	);
 };
 
-export default Footer;
+export default memo(Footer);

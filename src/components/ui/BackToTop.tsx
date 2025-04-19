@@ -1,28 +1,40 @@
-import { useState, useEffect, useCallback } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { memo, useCallback, useEffect, useState } from "react";
 import { FiChevronUp } from "react-icons/fi";
-import { motion, AnimatePresence } from "framer-motion";
 
-export default function BackToTop() {
+const BackToTop = () => {
 	const [isVisible, setIsVisible] = useState(false);
 
 	const toggleVisibility = useCallback(() => {
-		if (window.scrollY > 300) {
-			setIsVisible(true);
-		} else {
-			setIsVisible(false);
-		}
+		setIsVisible(window.scrollY > 300);
 	}, []);
 
-	const scrollToTop = () => {
+	const scrollToTop = useCallback(() => {
 		window.scrollTo({
 			top: 0,
 			behavior: "smooth",
 		});
-	};
+	}, []);
 
 	useEffect(() => {
-		window.addEventListener("scroll", toggleVisibility);
-		return () => window.removeEventListener("scroll", toggleVisibility);
+		toggleVisibility();
+
+		let timeoutId: number | null = null;
+
+		const handleScroll = () => {
+			if (timeoutId) return;
+
+			timeoutId = window.setTimeout(() => {
+				toggleVisibility();
+				timeoutId = null;
+			}, 100);
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+			if (timeoutId) window.clearTimeout(timeoutId);
+		};
 	}, [toggleVisibility]);
 
 	return (
@@ -42,4 +54,6 @@ export default function BackToTop() {
 			)}
 		</AnimatePresence>
 	);
-}
+};
+
+export default memo(BackToTop);

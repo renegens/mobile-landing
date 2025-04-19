@@ -1,6 +1,7 @@
-import type { GithubCornerProps } from "types/app";
+import { memo } from "react";
+import type { GithubCornerProps } from "config";
 
-export default function GithubCorner({ href }: GithubCornerProps) {
+const GithubCorner = ({ href }: GithubCornerProps) => {
 	return (
 		<>
 			<a
@@ -53,4 +54,6 @@ export default function GithubCorner({ href }: GithubCornerProps) {
       `}</style>
 		</>
 	);
-}
+};
+
+export default memo(GithubCorner);

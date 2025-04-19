@@ -1,12 +1,13 @@
-import type { FeaturesProps } from "types/app";
+import { memo } from "react";
+import type { FeaturesProps } from "config";
 
-export default function Features({ features }: FeaturesProps) {
+const Features = ({ items }: FeaturesProps) => {
 	return (
 		<div className="mb-16">
 			<h2 className="mb-6 text-2xl font-semibold">Features</h2>
 
 			<div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-				{features.map((feature) => {
+				{items.map((feature) => {
 					const Icon = feature.icon;
 					return (
 						<div
@@ -26,4 +27,6 @@ export default function Features({ features }: FeaturesProps) {
 			</div>
 		</div>
 	);
-}
+};
+
+export default memo(Features);

@@ -1,7 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
 import type { PropsWithChildren } from "react";
+import { memo } from "react";
 
-export default function PageAnimation(props: PropsWithChildren) {
+const PageAnimation = (props: PropsWithChildren) => {
 	return (
 		<AnimatePresence mode="wait">
 			<motion.div
@@ -29,4 +30,6 @@ export default function PageAnimation(props: PropsWithChildren) {
 			</motion.div>
 		</AnimatePresence>
 	);
-}
+};
+
+export default memo(PageAnimation);

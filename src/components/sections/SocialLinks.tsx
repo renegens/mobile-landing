@@ -1,6 +1,7 @@
-import type { SocialLinksProps } from "types/app";
+import { memo } from "react";
+import type { SocialLink, SocialLinksProps } from "config";
 
-export default function SocialLinks({ links }: SocialLinksProps) {
+const SocialLinks = ({ items }: SocialLinksProps) => {
 	return (
 		<div className="mb-8">
 			<div className="relative">
@@ -15,7 +16,7 @@ export default function SocialLinks({ links }: SocialLinksProps) {
 			</div>
 
 			<div className="mt-6 flex justify-center gap-4">
-				{links.map((link) => {
+				{items.map((link: SocialLink) => {
 					const Icon = link.icon;
 					return (
 						<a
@@ -33,4 +34,6 @@ export default function SocialLinks({ links }: SocialLinksProps) {
 			</div>
 		</div>
 	);
-}
+};
+
+export default memo(SocialLinks);

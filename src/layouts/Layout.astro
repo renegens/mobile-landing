@@ -1,7 +1,7 @@
 ---
-import PageAnimation from "@components/ui/PageAnimation";
 import Footer from "@components/sections/Footer";
 import GithubCorner from "@components/ui/GithubCorner";
+import PageAnimation from "@components/ui/PageAnimation";
 export interface Props {
 	title: string;
 	description?: string;
@@ -21,14 +21,8 @@ const { showFooter = true } = Astro.props;
     <meta property="og:title" content={title} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url.href} />
-    {
-      description && (
-        <>
-          <meta name="description" content={description} />
-          <meta property="og:description" content={description} />
-        </>
-      )
-    }
+    {description && <meta name="description" content={description} />}
+    {description && <meta property="og:description" content={description} />}
     <meta name="theme-color" content="#000000" />
     <title>{title}</title>
     <script>

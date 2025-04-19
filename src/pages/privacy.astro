@@ -1,9 +1,9 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import Breadcrumbs from "@components/ui/Breadcrumbs";
 import BackToTop from "@components/ui/BackToTop";
+import Breadcrumbs from "@components/ui/Breadcrumbs";
+import Layout from "@layouts/Layout.astro";
+import { siteConfig } from "../config";
 import { marked } from "marked";
-import { appData } from "../data/appData";
 
 const privacyModules = import.meta.glob("./content/privacy.md", {
 	eager: true,
@@ -13,7 +13,7 @@ const privacyContent = Object.values(privacyModules)[0] as {
 };
 const htmlContent = marked(privacyContent.rawContent());
 
-const { title } = appData;
+const { title } = siteConfig;
 ---
 
 <Layout title={`${title} · Privacy Policy`} description={`Privacy Policy for ${title} application - How we handle and protect your data`}>

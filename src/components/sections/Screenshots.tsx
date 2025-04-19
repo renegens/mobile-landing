@@ -1,9 +1,10 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import type { ScreenshotsProps } from "../../types/app";
+import { AnimatePresence, motion } from "framer-motion";
+import { memo, useState } from "react";
+import type { ScreenshotsProps } from "config";
+import { areImagesEqual } from "config";
 import DeviceToggle from "../ui/DeviceToggle";
 
-export default function Screenshots({ images }: ScreenshotsProps) {
+const Screenshots = ({ images }: ScreenshotsProps) => {
 	const [activeDevice, setActiveDevice] = useState<"iphone" | "ipad">("iphone");
 	const currentImages = images[activeDevice];
 
@@ -28,17 +29,13 @@ export default function Screenshots({ images }: ScreenshotsProps) {
 							const container = document.querySelector(
 								".screenshots-container",
 							);
-							if (container) {
-								container.classList.add("overflow-x-auto");
-							}
+							if (container) container.classList.add("overflow-x-auto");
 						}}
 						onAnimationStart={() => {
 							const container = document.querySelector(
 								".screenshots-container",
 							);
-							if (container) {
-								container.classList.remove("overflow-x-auto");
-							}
+							if (container) container.classList.remove("overflow-x-auto");
 						}}
 					>
 						<div className="flex gap-6 pb-4">
@@ -74,4 +71,6 @@ export default function Screenshots({ images }: ScreenshotsProps) {
 			</div>
 		</div>
 	);
-}
+};
+
+export default memo(Screenshots, areImagesEqual);

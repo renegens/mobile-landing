@@ -1,12 +1,13 @@
 ---
-import Layout from "@layouts/Layout.astro";
 import AppHero from "@components/sections/AppHero";
-import Screenshots from "@components/sections/Screenshots";
-import Features from "@components/sections/Features";
 import FAQ from "@components/sections/FAQ";
+import Features from "@components/sections/Features";
+import Reviews from "@components/sections/Reviews";
+import Screenshots from "@components/sections/Screenshots";
+import SocialLinks from "@components/sections/SocialLinks";
 import Lightbox from "@components/ui/Lightbox";
-import SocialLinks from "@components/social/SocialLinks";
-import { appData } from "../data/appData";
+import Layout from "@layouts/Layout.astro";
+import { siteConfig } from "../config";
 
 const {
 	title,
@@ -17,7 +18,8 @@ const {
 	storeLinks,
 	socialLinks,
 	logo,
-} = appData;
+	reviews,
+} = siteConfig;
 ---
 
 <Layout title={title} description={description}>
@@ -28,9 +30,10 @@ const {
       <Screenshots images={screenshots} client:load />
     </div>
 
-    <Features features={features} />
-    <FAQ items={faqs} />
-    <SocialLinks links={socialLinks} />
+    <Features items={features} />
+    <Reviews items={reviews} client:visible />
+    <FAQ items={faqs} client:visible />
+    <SocialLinks items={socialLinks} />
   </main>
 </Layout>
 

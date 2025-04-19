@@ -1,15 +1,15 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import Breadcrumbs from "@components/ui/Breadcrumbs";
 import BackToTop from "@components/ui/BackToTop";
+import Breadcrumbs from "@components/ui/Breadcrumbs";
+import Layout from "@layouts/Layout.astro";
+import { siteConfig } from "../config";
 import { marked } from "marked";
-import { appData } from "../data/appData";
 
 const termsModules = import.meta.glob("./content/terms.md", { eager: true });
 const termsContent = Object.values(termsModules)[0] as { rawContent(): string };
 const htmlContent = marked(termsContent.rawContent());
 
-const { title } = appData;
+const { title } = siteConfig;
 ---
 
 <Layout title={`${title} · Terms of Service`} description={`Terms of Service for ${title} application - Rules and guidelines for using our service`}>

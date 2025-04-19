@@ -1,13 +1,26 @@
-import type { FAQProps } from "types/app";
+import { motion } from "framer-motion";
+import { memo } from "react";
+import type { FAQProps } from "config";
 
-export default function FAQ({ items }: FAQProps) {
+const FAQ = ({ items }: FAQProps) => {
 	return (
 		<div className="mb-16">
-			<h2 className="mb-6 text-2xl font-semibold">FAQ</h2>
+			<motion.h2
+				initial={{ opacity: 0, y: 10 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true }}
+				className="mb-6 text-2xl font-semibold"
+			>
+				FAQ
+			</motion.h2>
 			<div className="space-y-4">
-				{items.map((item) => (
-					<div
+				{items.map((item, index) => (
+					<motion.div
 						key={item.question}
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ delay: index * 0.1 }}
 						className="overflow-hidden rounded-xl border border-white/10 bg-white/[0.03]"
 					>
 						<details className="group">
@@ -35,9 +48,11 @@ export default function FAQ({ items }: FAQProps) {
 								</div>
 							</div>
 						</details>
-					</div>
+					</motion.div>
 				))}
 			</div>
 		</div>
 	);
-}
+};
+
+export default memo(FAQ);

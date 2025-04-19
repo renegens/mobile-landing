@@ -1,7 +1,8 @@
-import { FiHome, FiChevronRight } from "react-icons/fi";
-import type { BreadcrumbsProps } from "types/app";
+import { memo } from "react";
+import { FiChevronRight, FiHome } from "react-icons/fi";
+import type { BreadcrumbsProps } from "config";
 
-export default function Breadcrumbs({ items }: BreadcrumbsProps) {
+const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
 	return (
 		<nav className="flex items-center space-x-2 text-sm text-gray-400 mb-8">
 			<a href="/" className="hover:text-white transition-colors p-2 -ml-2">
@@ -22,4 +23,6 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
 			))}
 		</nav>
 	);
-}
+};
+
+export default memo(Breadcrumbs);

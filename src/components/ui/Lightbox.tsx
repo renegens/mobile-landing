@@ -1,7 +1,8 @@
-import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FiX, FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import type { LightboxProps } from "../../types/app";
+import { AnimatePresence, motion } from "framer-motion";
+import { memo, useCallback, useEffect, useState } from "react";
+import { FiChevronLeft, FiChevronRight, FiX } from "react-icons/fi";
+import type { LightboxProps } from "config";
+import { areImagesEqual } from "config";
 
 declare global {
 	interface Window {
@@ -9,7 +10,7 @@ declare global {
 	}
 }
 
-export default function Lightbox({ images }: LightboxProps) {
+const Lightbox = ({ images }: LightboxProps) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [activeDevice, setActiveDevice] = useState<"iphone" | "ipad">("iphone");
@@ -20,6 +21,13 @@ export default function Lightbox({ images }: LightboxProps) {
 			setCurrentIndex(index);
 			setActiveDevice(device);
 			setIsOpen(true);
+		};
+
+		return () => {
+			window.openLightbox = null as unknown as (
+				index: number,
+				device: "iphone" | "ipad",
+			) => void;
 		};
 	}, []);
 
@@ -100,4 +108,6 @@ export default function Lightbox({ images }: LightboxProps) {
 			)}
 		</AnimatePresence>
 	);
-}
+};
+
+export default memo(Lightbox, areImagesEqual);

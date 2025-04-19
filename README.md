@@ -46,18 +46,16 @@ npm run build
 
 ## Customization
 
-### App Data
+### App Configuration
 
-Edit `src/data/appData.ts` to customize your app information:
-```typescript
-export const appData = {
-  title: "Your App Name",
-  description: "Your app description",
-  features: [...],
-  screenshots: {...},
-  // more configuration options
-}
-```
+Edit files in the `src/config/` directory to customize different aspects of your app:
+
+- **appInfo.ts** - Change app name, description, logo and store links
+- **features.ts** - Modify your app's feature list and icons
+- **faq.ts** - Update frequently asked questions
+- **reviews.ts** - Edit user testimonials
+- **screenshots.ts** - Configure screenshot image paths
+- **socialLinks.ts** - Set up social media links
 
 ### Content
 
@@ -65,16 +63,6 @@ export const appData = {
 - **Screenshots:** Place device images in `public/screenshots/{iphone|ipad}/`
 - **Styling:** Modify Tailwind classes or edit theme in `tailwind.config.cjs`
 
-### Project Structure
-
-```
-src/
-├── components/    # UI components
-├── data/          # App configuration
-├── layouts/       # Page layouts
-├── pages/         # Routes and pages
-└── types/         # TypeScript definitions
-```
 
 ## License
 
