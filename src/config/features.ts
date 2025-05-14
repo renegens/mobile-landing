@@ -3,18 +3,18 @@ import type { Feature } from "./types";
 
 export const features: Feature[] = [
 	{
-		title: "Main Feature",
-		description: "Describe your main feature here. What makes it special?",
+		title: "Παρακολούθηση & Καταγραφή",
+		description: "Παρακολουθήστε αναπτυξιακά ορόσημα και καταγράψτε την καθημερινή ρουτίνα του μωρού σας με εύχρηστα εργαλεία. Από γεύματα και ύπνο έως αλλαγές πάνας, όλα είναι εύκολα προσβάσιμα με λεπτομερή γραφήματα και αναλύσεις.",
 		icon: FiStar,
 	},
 	{
-		title: "Another Feature",
-		description: "What else can your app do? Tell users about it here.",
+		title: "Εκμάθηση & Υποστήριξη",
+		description: "Αποκτήστε πρόσβαση σε επιμελημένα μαθήματα για βασικά θέματα γονεϊκότητας και λάβετε άμεση υποστήριξη μέσω του AI Bot Βοήθειας. Ενδυναμωθείτε με γνώση και βοήθεια όποτε τη χρειάζεστε.",
 		icon: FiZap,
 	},
 	{
-		title: "One More Feature",
-		description: "Add another key feature of your application here.",
+		title: "Χαλαρωτικές Λειτουργίες",
+		description: "Δημιουργήστε ένα ήρεμο περιβάλλον με χαλαρωτικούς ήχους, νανουρίσματα και φως νυκτός. Ιδανικά για την ώρα του ύπνου και τις νυχτερινές περιπολίες, βοηθώντας το μωρό σας να χαλαρώσει.",
 		icon: FiBox,
 	},
 ];

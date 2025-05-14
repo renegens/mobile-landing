@@ -1,9 +1,9 @@
 import type { AppLogo, StoreLinks } from "./types";
 
 export const appInfo = {
-	title: "Your App Name",
+	title: "Great Parent",
 	description:
-		"Here you can write a brief description of your application. Tell users about its main features and benefits in 1-2 sentences.",
+		"Πλοηγηθείτε στην πρώιμη γονεϊκότητα με αυτοπεποίθηση χρησιμοποιώντας το Great Parent, την ολοκληρωμένη εφαρμογή για την παρακολούθηση της ανάπτυξης, την καταγραφή της καθημερινής φροντίδας, την πρόσβαση σε συμβουλές ειδικών και την καταπράυνση του μωρού σας. Είναι σχεδιασμένη για να παρέχει ολοκληρωμένη υποστήριξη και ψυχική ηρεμία, κάνοντας το ταξίδι σας πιο ομαλό και πιο ενημερωμένο.",
 	logo: {
 		type: "image" as AppLogo["type"],
 		src: "favicon.webp",

@@ -2,23 +2,23 @@ import type { Review } from "./types";
 
 export const reviews: Review[] = [
 	{
-		author: "Sarah K.",
+		author: "Μαρία Κ.",
 		rating: 5,
-		text: "This app has completely transformed how I manage my daily tasks. The interface is intuitive and the performance is outstanding!",
+		text: "Το Great Parent μου έσωσε τη ζωή! Η παρακολούθηση της καθημερινής ρουτίνας του μωρού μου έγινε τόσο εύκολη και οι αναλύσεις με βοηθούν να καταλαβαίνω καλύτερα τις ανάγκες του. Το AI Bot απαντάει άμεσα σε όλες μου τις απορίες!",
 	},
 	{
-		author: "James M.",
+		author: "Γιώργος Μ.",
 		rating: 5,
-		text: "I've tried dozens of similar apps, but this one stands out with its unique features and reliability. Highly recommended!",
+		text: "Ως πρωτογενής πατέρας, η βιβλιοθήκη μαθημάτων ήταν απαραίτητη για μένα. Τα επιμελημένα μαθήματα με βοήθησαν να κατανοήσω καλύτερα τα αναπτυξιακά ορόσημα και να ανταποκριθώ στις ανάγκες του μωρού μου με αυτοπεποίθηση.",
 	},
 	{
-		author: "Elena T.",
+		author: "Ελένη Τ.",
 		rating: 4,
-		text: "Great app with impressive functionality. The recent update made it even better. Just a few minor UI improvements would make it perfect.",
+		text: "Τα χαλαρωτικά νανουρίσματα και οι ήχοι είναι σωτήριοι για τις νυχτερινές περιπολίες! Το μωρό μου χαλαρώνει αμέσως. Θα ήθελα μόνο λίγες επιπλέον επιλογές ήχων, αλλά γενικά η εφαρμογή είναι εξαιρετική.",
 	},
 	{
-		author: "Michael R.",
+		author: "Νίκος Ρ.",
 		rating: 5,
-		text: "Customer support is exceptional. Had an issue and they resolved it within hours. The app itself is fantastic too!",
+		text: "Η υποστήριξη πελατών είναι εξαιρετική - απάντησαν άμεσα σε κάθε ερώτησή μου. Αλλά το πιο σημαντικό είναι ότι η εφαρμογή με βοηθά να παρακολουθώ την ανάπτυξη του μωρού μου και να γιορτάζω κάθε μικρό επίτευγμα. Απαραίτητη για κάθε νέο γονιό!",
 	},
 ];
